@@ -1,19 +1,112 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
-\documentclass{article}
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{amsmath}
+
+
+\definecolor{gray}{rgb}{0.8,0.8,0.8}
+
+\DeclareGraphicsRule{.tif}{png}{.png}
+{‘convert #1 ‘dirname #1‘/‘basename #1 .tif‘.png}
+%opening
+
+
+\lstset{
+	language=inform,
+	frame=shadowbox,
+	rulesepcolor=\color{gray},
+	captionpos=b
+}
 
 \begin{document}
 
+	\title{\textbf{Formale Methoden der Informatik}\\WS2013}
+	\author{Lectors: Pichler, Egly \\ Georg Abenthung \\ Matr. Nr.: 0726213 }
+	\date{Oct. 2013}
 
-\section{Title}
+	\newpage
+	
+%	\begin{figure}
+%		\centering
+%		\includegraphics[width=10cm]{tuwien_logo}
+%	\end{figure} 
+	\maketitle
+	
+	\newpage
+\section{Computation and Computability}
+\subsection{Problems}
+\begin{itemize}
+  \item {Problem has a name}
+  \item {Infinite set of instances}
+  \item {Question}
+  \item {Answer (yes/no on decision question)}
+  \item There are diferent types of problems
+  \item In FMI most problems are decision problems.
+  \item A program should solve a problem in a mechanical way! (Can be solved by
+  a computer or ,,An algorithm can solve the problem''
+  \item Alg. should be simple, understandable(shareable), should terminate and
+  should work on ALL possible instances of the problem
+  \item Given a problem P, can we write a program that is an algorithm for P
+  \item Input is a single String or a list of values (def.)
+  \item Our programming language is called \textbf{SIMPLE}
+  \item If there doesn't exist a SIMPLE program, there doesn't exist a Java
+  program (or Turing machine program) either
+ \end{itemize}
 
-\subsection{Subtitle}
+\begin{lstlisting}
+Church Turing Thesis: 
+Any algorithm can be programmed in SIMPLE		
+\end{lstlisting}
 
-Plain text.
+Goldbach's Conjecture can't be proved. (Every even integer greater than 2 is
+the sum of two primes) The algorithm to check never terminates until we find a
+counterexample. If we would have a program, which could tell us, if an algorithm
+terminates, we could answer the Goldbach Conjecture. BUT: It doesn't exist.
 
-\subsection{Another subtitle}
+\subsection{Halting problem}
+We want to show, that the Halting problem is undecidable, and then show, that
+the assumption leads to a contradiction.
 
-More plain text.
+\subsubsection{Page 20}
+A program will be applied to a program as input string. \\
+' \ldots prime \\
+'' \ldots doubleprime \\
+
+$\Pi''_h $ \ldots ,,Pi sub h prime'' \\
+
+This prove goes back to Allan Touring.
+\subsection{Page 23}
+REachable-Code Problem is similiar to prove than Halting problem.
+Put some code at the end of the program (Infinite Loop !?!?)
+
+\subsection{Page 24}
+Decidability implies Semi-Decidability but not vice-versa.
+
+The halting problem is semi-decidable!
+Semi-Decidability: You'll never know if you haven't calculated far enough, or
+you'll never reach an end!
+
+
+\subsection{Page 26}
+THere are two sources of infinity.
+It will halt for instances which reach all lines of code, but the algorithm will
+never stop, when there's dead code.
+
+\subsection{Page 27}
+Cantor's enumeration. Give an enumeration to two indefinite sets.
+
+\subsection{Page 28}
+compare to Sequential Calculus by Goedel
+
+
 
 
 \end{document}
