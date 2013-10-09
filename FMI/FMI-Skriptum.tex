@@ -1,6 +1,6 @@
 %%This is a very basic article template.
 %%There is just one section and two subsections.
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper]{article}
 \usepackage[utf8x]{inputenc}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -74,11 +74,10 @@ the sum of two primes) The algorithm to check never terminates until we find a
 counterexample. If we would have a program, which could tell us, if an algorithm
 terminates, we could answer the Goldbach Conjecture. BUT: It doesn't exist.
 
-\subsection{Halting problem}
+\subsection{Halting problem (Page 20)}
 We want to show, that the Halting problem is undecidable, and then show, that
-the assumption leads to a contradiction.
+the assumption leads to a contradiction.\\
 
-\subsubsection{Page 20}
 A program will be applied to a program as input string. \\
 ' \ldots prime \\
 '' \ldots doubleprime \\
@@ -110,5 +109,65 @@ Cantor's enumeration. Give an enumeration to two indefinite sets.
 compare to Sequential Calculus by Goedel
 
 \section{Complexity of Problems and Algorithms}
+
+\subsection{Scope of complexity theory}
+Notation of Papadimitriou will be used in this section
+
+\subsection{Page 4}
+Does there exist a path between u and v.\\
+Outer repeat loop is repeated lineearly often.\\
+Inner loop also linearly often. At the end it's cubic runtime.
+
+\subsection{Page 5}
+The answer to all question: It doesn't really matter in context of complexity
+theory.
+
+\subsection{Page 9}
+the ,,Big O Notation'' is used in this lecture. $O(f(n))$\\
+Other notions are also reasonable, but we - in complexity theory - use the
+Big-O-Notation
+
+Complexity theory doesn't work with \textbf{finite} number of Instances for a
+problem $\mathcal{P}$. THe Problem must be generalized before.
+
+\subsection{Page 11 - Notion of O, $\Omega$, and $\Theta$}
+the big $\Omega$ notation is the reverse of the O notation
+
+$ O(n^3) $ might be $ 0.5n^3-17n^2 $\ldots
+
+
+\subsection{Page 12 - Efficiently Solvable}
+Can a problem be solved in Polynomial (\textbf{P} or \textbf{PTIME}) time.
+
+\subsection{Page 14}
+The Vertexes in a boolean circuit are it's ,,Gates''\\
+
+\subsection{Page 19}
+We don't care if we can solve the Problem $\mathcal{P}$ in $O(n)$ or $O(n^4)$.
+The only important thing is that we can solve it in \textbf{P}
+
+\subsection{Page 22  - from Boolean Formulas to Circuits}
+The boolean Input-Gates correspond with the variables used in the formula.
+
+\subsection{Page 26 - The class NP}
+The big problem is, that the search space is Exponential.
+THere are $2^n$ possible assignments.
+
+Although we can often find a solution to a problem $\mathcal{P}$ with good
+heuristics.
+
+\subsection{Page 29}
+$INSTANCES(\mathcal{P})$\ldots Boolean Formulas\\
+$CERT$\ldots Models (truth assignments)
+
+\subsection{Page 30 - Definition of the class NP}
+see Course material
+
+\subsection{Page 35}
+Transform the TSP from an Optimization Problem to a decision problem by
+introducing a bound.
+
+
+
 
 \end{document}
