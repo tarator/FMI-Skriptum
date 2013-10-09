@@ -10,6 +10,7 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{framed}
 
 
 \definecolor{gray}{rgb}{0.8,0.8,0.8}
@@ -59,12 +60,10 @@
   \item Our programming language is called \textbf{SIMPLE}
   \item If there doesn't exist a SIMPLE program, there doesn't exist a Java
   program (or Turing machine program) either
- \end{itemize}
+ \end{itemize}\begin{framed}Church Turing Thesis:\\ Any algorithm can be programmed
+in SIMPLE
+\end{framed}
 
-\begin{lstlisting}
-Church Turing Thesis: 
-Any algorithm can be programmed in SIMPLE		
-\end{lstlisting}
 
 Goldbach's Conjecture can't be proved. (Every even integer greater than 2 is
 the sum of two primes) The algorithm to check never terminates until we find a
@@ -84,7 +83,7 @@ $\Pi''_h $ \ldots ,,Pi sub h prime'' \\
 
 This prove goes back to Allan Touring.
 \subsection{Page 23}
-REachable-Code Problem is similiar to prove than Halting problem.
+Reachable-Code Problem is similiar to prove than Halting problem.
 Put some code at the end of the program (Infinite Loop !?!?)
 
 \subsection{Page 24}
@@ -96,7 +95,7 @@ you'll never reach an end!
 
 
 \subsection{Page 26}
-THere are two sources of infinity.
+There are two sources of infinity.
 It will halt for instances which reach all lines of code, but the algorithm will
 never stop, when there's dead code.
 
@@ -105,8 +104,5 @@ Cantor's enumeration. Give an enumeration to two indefinite sets.
 
 \subsection{Page 28}
 compare to Sequential Calculus by Goedel
-
-
-
 
 \end{document}
