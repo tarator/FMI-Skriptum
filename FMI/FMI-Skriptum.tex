@@ -10,7 +10,10 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{framed}
+\usepackage{array}
+\usepackage{multirow}
 
 
 \definecolor{gray}{rgb}{0.8,0.8,0.8}
@@ -169,5 +172,12 @@ introducing a bound.
 
 
 
+\begin{tabular}{p{.5cm}p{.5cm}p{.5cm}p{.5cm}l|l}
+1.	&\multicolumn{4}{l|}{Feld über vier Spalten}				& (def 1,2; pr)\\
+2.	&	&\multicolumn{3}{l|}{Feld über drei Spalten}			& (def 1,2; pr)\\
+3.	&	&\multicolumn{3}{l|}{Feld über drei Spalten}			& (def 1,2; pr)\\
+4.	&	& 	&\multicolumn{2}{l|}{Feld über zwei Spalten}		& (def 1,2; pr)\\
+5.	&\multicolumn{4}{l|}{Feld über vier Spalten}				& (def 1,2; pr)\\
+\end{tabular}
 
 \end{document}
