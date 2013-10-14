@@ -172,12 +172,163 @@ introducing a bound.
 
 
 
-\begin{tabular}{p{.5cm}p{.5cm}p{.5cm}p{.5cm}l|l}
-1.	&\multicolumn{4}{l|}{Feld über vier Spalten}				& (def 1,2; pr)\\
-2.	&	&\multicolumn{3}{l|}{Feld über drei Spalten}			& (def 1,2; pr)\\
-3.	&	&\multicolumn{3}{l|}{Feld über drei Spalten}			& (def 1,2; pr)\\
-4.	&	& 	&\multicolumn{2}{l|}{Feld über zwei Spalten}		& (def 1,2; pr)\\
-5.	&\multicolumn{4}{l|}{Feld über vier Spalten}				& (def 1,2; pr)\\
-\end{tabular}
+\section{Reductions}
+
+This is the most important tool in complexity theory. It's used to compare the
+complexity of two problems.
+
+\subsection{Page 3 - Basic Idea}
+
+Recall the TSP.
+Compare TSP as a \textbf{Decision Problem} (a.k.a. TSP(D)) vs. the TSP as an
+\textbf{optimization Problem}
+
+Construct a:
+\begin{itemize}
+\item Decision problem using an Alg. for Opt.Problem: Does there exist a tour
+which fits in a specific budget (Budget might be calculatet by a TSP-Opt-Alg.)
+\item Solution for the Opt.Probl using a Alg. for decision Problem: Use
+Binary search.
+\end{itemize}
+
+\subsection{Page 4}
+\paragraph{We have the following setting:}
+\begin{itemize}
+  \item Problem A: new Problem
+  \item Problem B: old and easy solution available
+  \item Use Problem B to solve the new Problem A
+  \item we say: A is reduced to problem B. (or $A \leq B$)
+\end{itemize}
+
+$ A \stackrel{R}{\Longrightarrow} B $
+
+We assume, that the reduction $R$ is feasible in time. We don't want to talk
+about the complexity of the reduction $R$, we want to talk about the complexity
+of A and B
+\paragraph{Another setting:}
+\begin{itemize}
+  \item Problem A: known as hard
+  \item Problem B: new
+  \item Problem B is also hard. (If there is no efficient method for A there
+  also doesn't exist a simple solution for B)
+\end{itemize}
+
+Complexity. Theory is more interested in the second setting (the negative
+example).
+
+\subsection{Page 8}
+ \begin{center}
+	\fbox{\begin{minipage}{15em}
+            \begin{tabbing}
+            \hspace*{2em}\= \kill % set the tabbings
+ 
+            R: \> $A \longrightarrow B$ \\
+               \> $x \longmapsto R(x)$ \\
+               \> $x \in A \Leftrightarrow  R(x) \in B$
+
+            \end{tabbing}
+     \end{minipage}}
+\end{center}
+
+\subsection{Page 9}
+
+Recall what CNF (Conjunctive Normal Form on PL0) means. The SAT Problem is
+NP-Complee (without proof). If only CNF is allowed, the Problem is still
+NP-Hard. The same if you would allow any arbitrary structure (e.g. DNF).
+
+with 3-SAT we once more reduce the complexity, by reducing the length of the
+clauses to 3. The problem is still as complex.
+
+The reduction from SAT to 3-SAT is complicated and not covered in this lecture.
+
+\subsection{Page 10}
+2-SAT is easily solvable.
+
+
+\subsubsection{Page 10 - Independent Set}
+Two points should not be adjacent\ldots
+
+The problem gets hard, when you try to find a set of a size $K$
+
+\subsection{Page 11}
+
+2-SAT $\stackrel{R}{\Longrightarrow}$ REACHABILITY
+
+
+
+\subsection{Page 12ff - Example of solving the 2-SAT problem}
+We can construct 6 literals (3 variable $x_1, x_2, x_3$)
+
+ \begin{center}
+	\fbox{\begin{minipage}{15em}
+            \begin{tabbing}
+            \hspace*{2em}\= \kill % set the tabbings
+ 
+            $\alpha \rightarrow \beta \equiv \neg \alpha \vee \beta$ \\
+            $(\alpha \vee \beta) \equiv \neg \alpha \rightarrow \beta $ \\
+            $(\alpha \vee \beta) \equiv \neg \beta \rightarrow \alpha $\\
+
+
+            \end{tabbing}
+     \end{minipage}}
+\end{center}
+
+
+\subsection{Page 16ff - more complex example}
+
+This is a typical way of proving something.
+
+
+INDEPENDENT SET $\leq$ 3-SAT (Ind.Set at least as hasr than 3-SAT)
+
+3-SAT $\stackrel{R}{\Longrightarrow}$ INDEPENDENT SET
+We assume 3-SAT old and hard.
+
+\paragraph{Page 18} Choose one literal per clause and try to set it to true. Be
+sure not to assign true to a variable ad it's negation.
+
+
+\paragraph{Page 19} Divide the equivalence. WE start with the direction from
+right to left. Assume that $R(x)$ is a positive instance of B and then show,
+that $x$ is a positive instance of A.
+
+K \ldots number of klauses
+
+\paragraph{Page 20} find a truth assignment that $x \in A$
+We set those variables true which occur positively in the independent set.
+
+
+
+\paragraph{Page 21} Now we have to prove the other direction.
+
+Showing (ii) is trivial we have chosen m literals of m triangles.
+
+Showing (i) is more complicated. Choose an arbitrary pair of vertices and show
+it's not adjacent. But it's simpler by choosing an indirect proove.
+
+
+
+
+
+\subsection{Page 22}
+
+the red stuff is important. 
+
+\subsection{Page 24}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
