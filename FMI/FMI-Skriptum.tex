@@ -312,23 +312,123 @@ it's not adjacent. But it's simpler by choosing an indirect proove.
 
 \subsection{Page 22}
 
-the red stuff is important. 
+the red stuff is important.
+
+ANY(!) two NP-Problems can be reduced to each other. (e.g. the reduction from
+3-SAT to INDEPENDENT SET) 
+
+$ \mathcal{P}'_{in NP} \leq 3-SAT \leq IND-SET$ or also $ \mathcal{P}'_{in NP}
+\leq IND-SET \leq 3-SAT$
+
+NP is the Class of problems, that can be solved with succinct Certificates. (It
+only requires polynomial time to find a whitness)
+
+So, if a problem is for example reducable to SAT we know, that the Problem is
+not harder than NP.
+
+$P \subseteq NP \subseteq PSPACE \subseteq EXPTIME$
+
 
 \subsection{Page 24}
 
+ \begin{center}
+	\fbox{\begin{minipage}{15em}
+            \begin{tabbing}
+            \hspace*{2em}\= \kill % set the tabbings
+ 			\> $\mathcal{P}' \leq \mathcal{P} \subseteq P$\\
+            \> $x \stackrel{R} {\rightarrow} R(x)$ \\
+            \end{tabbing}
+     \end{minipage}}
+\end{center} 
+
+
+\subsection{Page 26}
+Informal Proof
+
+\subsection{Page 27}
+The formal solution
+ \begin{center}
+	\fbox{\begin{minipage}{15em}
+            \begin{tabbing}
+            \hspace*{2em}\= \kill % set the tabbings
+            \> $A \stackrel{R} {\rightarrow} B $ \\
+            \> $x \mapsto R(x) $ \\
+            \> $x \in A \Leftrightarrow R(x) \in B $
+            \end{tabbing}
+     \end{minipage}}
+\end{center} 
 
 
 
 
 
 
+\section{NP-Completeness}
+
+\subsection{Page 3}
+
+2-SAT can be solved in P-Time by reducing it to reachability. SAT and 3-SAT are
+NP-Complete (without Proof here.)
 
 
+\subsection{Page 5}
+THis is only a rough proof-sketch, not the whole proof.
+
+\subsection{Page 6}
+We are only allowed to assume, that $\mathcal{P}$ has a polynomiable decidable
+certificate relation. (Else $\mathcal{P}$ would not be arbitrary.)
 
 
+\subsection{Page 8}
+WE have to show that $SAT \leq 3-SAT$
+
+$\phi $ and $\psi$ must not be logically equivalent.
+
+\subsection{Page 11 - Some NP-Problems}
+
+\subsection{Page 12}
+Left: Independent set
+Idea: Take the complement graph (on the right side)
+
+With this idea an reduction can be constructed.
+
+\subsubsection{Page 17}
 
 
+ \begin{center}
+	\fbox{\begin{minipage}{15em}
+            \begin{tabbing}
+            \hspace*{2em}\= \kill % set the tabbings
+            3-SAT: \\
+            $\phi$ = \> $C_1 \wedge \ldots \wedge C_n $ \\
+            \> $ C_i = (l_{i1} \vee l_{i2} \vee l_{i3}) $ \\
+        
+            \end{tabbing}
+     \end{minipage}}
+\end{center} 
 
+\subsection{Page 18}
+Wheter you make a question more or less restrictive, you can't say beforehand,
+if solving the problem becomes easier or harder. 
 
+\subsection{Page 20}
+We have good SAT-Solvers, so sometimes it's good to reduce a problem to SAT
+first.
+
+\subsection{Page 26}
+\subparagraph{Certificate:} Truth assignment is a Certificate in the SAT world.
+Mapping is a Certivicate in the Graph world.
+
+\subsection{Page 28}
+
+Instead of a clause-based forumla we could also used a rule-based formula:
+$p_1 \wedge p_2 \wedge p_3 \rightarrow p_4  = \neg p_1 \vee \neg p_2 \vee \neg
+p_3 \vee p_4$
+
+\subsection{Page 30}
+The other direction.
+
+The more subformulas we have, the harder it's getting to prove, that there is a
+model.
 
 \end{document}
