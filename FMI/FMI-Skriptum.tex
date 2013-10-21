@@ -30,6 +30,21 @@
 	captionpos=b
 }
 
+%%% useful macros for Turing machines:
+\newcommand{\blank}{\sqcup}
+\newcommand{\ssym}{\triangleright}
+\newcommand{\esym}{\triangleleft}
+\newcommand{\halt}{\mbox{h}}
+\newcommand{\yess}{\mbox{``yes''}}
+\newcommand{\nos}{\mbox{``no''}}
+\newcommand{\lmove}{\leftarrow}
+\newcommand{\rmove}{\rightarrow}
+\newcommand{\stay}{-}
+\newcommand{\diverge}{\nearrow}
+\newcommand{\yields}[1]{\stackrel{#1}{\rightarrow}}
+
+\newcommand{\HALTING}{\mbox{\bf HALTING}}
+
 \begin{document}
 
 	\title{\textbf{Formale Methoden der Informatik}\\ Course 185.291 \\WS2013}
@@ -430,5 +445,111 @@ The other direction.
 
 The more subformulas we have, the harder it's getting to prove, that there is a
 model.
+
+
+
+\section{Other important complexity classes}
+
+\subsection{Page 6}
+
+This implementation is not recursive\ldots
+
+\subsection{Page 7}
+
+Time complexity is one exponation higher than it's space complexity.
+
+
+\subsection{Page 8 - PSPACE}
+
+We assume, that PSPCE is a bigger class than NP. (not prooved yet.)
+
+\subsection{Page 10 - Tica Tac Toe (TTT)}
+
+No branching for player 1. We only choose one move, which could lead to a
+winning-strategy.
+
+Exists-For-All alternation is typical for PSPACE:\\
+,,Does there exist \textbf{A} move for
+player one, so that for \textbf{ALL} moves of P2 \ldots exists \textbf{A} move
+for P1 so that for \textbf{ALL} moves for P2 \ldots''
+
+Don't check all constellations of P1 in a move. Check them one after another.
+So the steps of the tree is polynomial bounded. THis immediately gives us a
+PSPACE upperbound.
+
+\subsection{Page 11}
+The travelling space is exponentially big, but we are not forced to use it.
+THis is a property of the game not a property of complexity theory.
+
+\subsection{Page 14}
+$P \subseteq PTIME$ \ldots you don't have more time to access the memory more
+often \ldots
+
+\subsection{Page 14}
+We have two problems, which need PTIME, so we can don't address more than PSPACE
+memory.
+
+\subsection{Page 15 - EXPTIME}
+
+,,2 to the power of a polynom.''
+
+
+
+\section{Turing machines}
+
+Some proofs are almost impossible to encode in SIMPLE. some are easier to
+implement in Turing machines.
+
+\subsection{Page 4 }
+Transition table of the turing machine.
+
+\subsection{Page 5}
+One sided infinitely tape.
+
+$(s, \ssym{}, 1001)$ means (the cursor position, the symbols on the left side
+of the cursor including the cursor, the alphabet on the right side )
+
+We can store a constant amount of information in the states of the turing
+machine.
+
+
+\subsection{Page 8}
+the ,,h'' state is used, if we want to produce output. Else the states are
+,,yes'' or ,,no''
+
+\subsection{Page 10}
+
+yields with $M^k$ means a state can be reached in $k$ steps.
+
+\subsection{Page 11}
+Start and blank symbol are never in the alphabet $\Sigma$
+
+Definition: If a string is element of a Language L, the the TM should output
+yes.
+
+\subsection{Page 18}
+3 tapes are needed: Input-Tape (RO), Work-Tape (RW), Output-Tape (WO)
+
+\subparagraph{Implement a RO-Tape:} only allow to overwrite with the same
+symbol.
+\subparagraph{Implement a WO Tape:} only allow the cursor to move to the right.
+
+
+
+\subsection{Page 23}
+
+with NTM we have a \textbf{transition relation} instead of a \textbf{transition
+function.}
+
+\subsection{Page 25}
+
+If we have at least one ,,YES''-answer, we say, the machine accepts the input.\\
+To say no, \textbf{ALL} leavers must have the answer ,,NO''
+
+
+
+
+
+
 
 \end{document}
