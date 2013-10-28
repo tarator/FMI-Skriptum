@@ -15,7 +15,8 @@
 \usepackage{array}
 \usepackage{multirow}
 
-
+\newcommand{\tb}[1]{\textbf{#1}}
+\newcommand{\entails}[1]{\models{#1}}
 \definecolor{gray}{rgb}{0.8,0.8,0.8}
 
 \DeclareGraphicsRule{.tif}{png}{.png}
@@ -547,6 +548,213 @@ If we have at least one ,,YES''-answer, we say, the machine accepts the input.\\
 To say no, \textbf{ALL} leavers must have the answer ,,NO''
 
 
+\section{SAT Problems - Preparatory Concepts}
+
+\subsection{Page 5}
+This type of figure is called \tb{Cactus Plot}
+In 2002 they solved approx. 40 problems with 2010 Software they solved approx.
+170 problems. With hardware of 2010 and problems defined in 2009.
+
+Theese are real-world problems like hardware optimization of IBM.
+
+We use SAT-solvers because they are good and provided for free in Public Domain.
+
+
+\subsection{Pabge 19}
+
+$ \not\leftrightarrow = XOR$
+
+\subsection{Page 21}
+THis kond of translation is called \tb{Structure preserving translation}.
+
+\subsection{Pae 31}
+The tree shows all ISF's (Immediate subformulas).
+
+
+\subsection{Page 33}
+\subparagraph{Mapping:} We map all variables to truth-values
+
+There are other representation. Here the \tb{iff} representation is choesn by
+Uwe Egly.
+
+\subsection{Page 34}
+$\models$ \ldots ,,satifies''
+
+\subsection{Page 35}
+The first formula in the example: This is used to prove if the \tb{Modus Ponens}
+is sound.
+
+\subparagraph{Modus Ponens:} is an inference rule. from two formulas ,,$\phi$''
+and ,,$\phi \rightarrow \psi$'' derives ,,$\psi$''
+
+\subparagraph{Modus Tonens:} from two formulas ,,$\neg \phi$'' and ,,$\phi
+\rightarrow \psi$'' we derive ,,$\psi$''
+
+Because we can see here $I$ as an ,,Eigenvariable'' this proof is correct. It
+is shown \tb{forall}( $\forall$). So we don't have to introduce an additional 
+$\forall$-Quantifier
+
+
+\subsection{Page 37}
+An empty clause is an equivalence for  \tb{falsum}.\\
+$W$ \ldots Knowledgebase\\ $\phi$ \ldots query
+
+\subsection{Page 38}
+We reduce to \tb{Satisfiability} to reuse SAT-Solver.
+The reduction can be done quick (e.g. with a python script.)
+
+
+\subsection{Different normal forms and translation procedures}
+
+\subsection{Page 44 - NNF translation}
+These are the rules to translate a formula into \tb{NNF}. These rules must be
+applied in this order.
+
+\subsection{CNF translation}
+From the \tb{NNF} we can simply create \tb{CNF} by applying these rules.
+
+\subsection{Page 48 - Tseitin translation}
+NFT \ldots Normal form translation
+
+\subsection{Page 53}
+
+$q$ is labelled twice (with $l_1$ and $l_2$) because this
+is a non-optimized version.
+
+
+\subsection{Page 63}
+YOu can only show the existing of models, BUT you don't get the same models for 
+$\phi$ and $\delta(\phi)$
+
+SFO \ldots Subformula occurence
+
+\subsection{Page 64}
+
+NOT logically equivalent, nly satisfiability-equivalence!
+
+
+
+
+
+
+
+
+\section{SAT-Problems - Techniques for modern SAT Solvers}
+
+\subsection{Page 2 - Cactus Plot}
+What are the reasons for that improvements?
+
+These tests hav been run on a modern hardware with solvers from 2002-2010. So,
+the better results are just because of the better implementations of the
+SAT-solvers.
+
+In modern solvers not only one step backtracking. THe solvers jump high above\ldots
+
+\subsection{Page 5}
+\subparagraph{DLL} \ldots ,,Davis-Loveland-Lodgement'' the authors of the first
+paper (also called DPLL )
+
+\subsection{Page 6}
+\subparagraph{CDCL} - Conflict Driven Clause Learning solvers
+
+\subsection{Page 7}
+Basic idea of solvers.
+
+\subsection{Page 14}
+Red-Arrows ($\leftarrow$) mean: Conflict between these two clauses under the
+partial assignment. WE are now in a deadlock stage. We can't put away the
+conflict.
+
+We now apply the first stop criterium. WE now try to backtrack chronologically.
+
+
+\subsection{Page 18}
+
+After a few backtracks we get a assignment which satifies all clauses.
+
+\subparagraph{UNIT-Rule} THe blue clauses on the slides are unit (c must be 1
+to satisfy this clause) the unit rule detects that and sets c to true. The same
+happens to atom d.
+
+This is called \tb{Boolean Constraint Propagation}.
+
+\subsection{Page 19}
+Now we have a model. Because every clause is satisfied
+
+
+\subsection{Page 20}
+The status of the clauses change over time, like shown in this table. After
+each decision the status change.
+
+
+\subsection{Page 22}
+
+Horn Clauses: Every clause has at most one positive atom. (But can have many
+atoms)
+
+\subsection{Page 23 - Heuristics to select truth assignments}
+\subsection{Page 24 - DLIS}
+
+Quite an expensive heuristic. Here we go to the approach to satisfy clauses
+quickly.
+
+\subsection{Page 25 - Jeroslov-Wang Heuristic}
+
+You try to get Unit-clauses quickly, because they are not far away of conflicts.
+You want to get short clauses here quickly.
+
+\subsection{Page 26 - Basic SAT Algorithm}
+
+\subparagraph{PCP} Boolean Constraint Propagation
+
+\subsection{Page 30 - }
+Each node in the IG is a variable assignment.
+
+dl (Decision Level) 0 for unit clauses \ldots You don't have a choice. YOu have
+to chose the correct answer for the remaining variable.
+
+
+\subsection{Page 31}
+
+(sic!) $\neg v_1$ should be $ v_{1}^d $ (dual) here
+
+\subsection{Page 32}
+In \tb{S2} we have a UNIT-Clause. We can assign the UNIT value.
+
+Keep in mind: on the slides, we often only see parial IG's!
+
+\subsection{Page 33ff - Example of Implication Graph (IG) GRASP approach}
+
+\subsection{Page 37}
+We have a conflict graph with the conflict node $\kappa$
+
+\subsection{Page 39}
+It's conflict driven, because we start to learn, after a conflict $\kappa $
+occured.
+
+\subsection{Page 43}
+How can we learn a clause out of this conflict?
+
+decision levels are increased whenever there is made a new decision
+
+The conslict clause is the negated decision clause.
+
+(sic!) at the bottom we should flip $x_1$ instead to flip $x_6$
+
+\subsection{Page 45}
+By backtrack to decision level 6, the PCB automatically flips $x_1$ because of
+the newly learned rule. Which auomatically makes $\neg x_1$ becomes unit.
+
+
+\subsection{Page 48}
+We have a conflict $\kappa'$ but we don't have a decision ($x_1$ was unit, not
+decided.) Now we could try to go back chronologically to an higher dl. But this
+is not a good idea. WE go back to dl 3 because there we have the chance to
+change an assignment, else the clause will remain conflicting. The only one
+which makes the learned clause $c_11$ non conflicting.
+
+
+\subsection{Page 53 - first UIP scheme}
 
 
 
