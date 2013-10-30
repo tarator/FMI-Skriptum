@@ -756,6 +756,45 @@ which makes the learned clause $c_11$ non conflicting.
 
 \subsection{Page 53 - first UIP scheme}
 
+\subsection{Page 54}
+cut is a partition of the vertice-set. One node of the edge is in S and the
+other node is in T
+
+\subparagraph{Page 55}
+
+These 3 cut edges are the 3 possibilieties to cut out the choice-nodes. You have
+to choose one of them. Each cut brings up a different conflict clause. Which one
+to choose?
+
+\subparagraph{Page 58}
+
+All clauses shown in the previous slides where \tb{Asserting clauses}.
+Actual SAT-solvers only work with asserting clauses.
+
+\subparagraph{Page 59 - UIP's}
+\subparagraph{UIP} \ldots Unique implication point
+
+\subparagraph{Page 60}
+
+Choose the cut (see Page 55) according to the first UIP.
+
+\subparagraph{PAge 61}
+
+only one decision from the highest level will be taken to the second last
+decision level, to get a unique.
+
+\subparagraph{Page 65}
+In the res the $x_5$ has been cancelled like mentioned in the previous slides.
+
+\subparagraph{Page 68 - VSIDS}
+After ading learned clauses, you don't go back and recalculate, you simply add
+the new rule. To avoid overflows you simply divide the scores by 2 (or any
+other number\ldots but 2 is good because it's a bit-shift).
+
+
+
+
+
 
 
 
