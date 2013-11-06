@@ -911,11 +911,16 @@ You shoud be able to answer ,,Why is a chordal graph better?''
 
 \section{Eqaulity Logic and Uninterpreted Function Symbols}
 
+\subsection{Page 6}
+You loose all function ? except \textbf{function congruence}.
 
 \subsection{Page 7}
 
 \subparagraph{Why?} When you say, that a property holds for $\phi'$, then this
 property holds also for the special property of ,,$+$'' (or $\phi$)
+You prove something on the left for all functions of type \textbf{F}. You show a
+more general theorem, when you replace interpreted by uninterpreted function
+values.
 
 
 \subsection{Page 8}
@@ -923,24 +928,48 @@ Even simplify the proof search (which is the crucial stuff\ldots)
 
 \subsection{Page 9}
 
-Remark: Constants are special function symbols with arity 0.
+\subparagraph{Remark Definition:} Constants are special function symbols with
+arity 0.
+
+\subparagraph{Remarks:} Everything except the equality ($ \doteq $) is
+uninterpreted.
+
+\subsection{Page 11}
+
+Loopbound: $i<2$ \ldots this is a constant, so you know, when the loop stops.
 
 
+\subsection{Page 13}
+Tse multiplier $*$ is - still - an interpreted function. We want to replace it
+with an uninterpreted function.
+
+\subsection{Page 14} You have to deal with overflow in machine architecture.
+
+The binary multiplication $*$ is replaced by the binary function $G$
+
+\subsection{Page 15} we now discuss, who to get rid of the uninterpreted
+symbols, we created in the previous slides.
+
+\subsection{Page 17}
+FC \ldots functionality constraints
+
+\subsection{Page 18}
+If you have a constant, you associate it with it's value.
 
 
+\subsection{Page 21 - Ackermann reduction (AR)) with more than one funciton
+symbols} \subsection{Page 23} This shows how ,,flat'' is computed.
+\subsection{Page 24} Read it as a conjunction over the component-wise
+equalities.
+
+\subsection{Page 25}: The $in \doteq in$ can be simplified to $true$.
+
+We can decide the E-formula by converting it to a propositional formula and
+decide it then.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+\subsection{Page 31}
+The red stuff line 4: Put the negation iinto the formula and translate the
+implication $( a \rightarrow b )$ to $(\neg a \vee b)$ 
 
 \end{document}
