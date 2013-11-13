@@ -43,6 +43,7 @@
 \newcommand{\stay}{-}
 \newcommand{\diverge}{\nearrow}
 \newcommand{\yields}[1]{\stackrel{#1}{\rightarrow}}
+\newcommand{\TPL}{T_{PL}}
 
 \newcommand{\HALTING}{\mbox{\bf HALTING}}
 
@@ -971,5 +972,116 @@ decide it then.
 \subsection{Page 31}
 The red stuff line 4: Put the negation iinto the formula and translate the
 implication $( a \rightarrow b )$ to $(\neg a \vee b)$ 
+
+
+
+\section{Deductive Verification of Programs}
+\subparagraph{Lector: }Gernot Salzer
+
+\subsection{Page 5}
+Building compilers is nowadays much more easy, since there are automatic
+generations.
+
+\subsection{Page 8}
+\subparagraph{Model Checking:} e.g. the programm must look in a specific time
+for user input. This can be checked using Model checking.
+
+
+\subsection{Page 9}
+Program is not adequate: It's difficult to know for a computer, what the
+customer means.
+
+\subsection{Page 10}
+You only take a look at the properties, you are interested in. Not to all the
+auxiliary variables (e.g. Program for multiplication: you only verify the
+output, and not that a aux.var. which is used in the programm behaves in a
+specified manner.)
+
+\subsection{Page 11}
+\subparagraph{semantics of $\TPL$}: Normally we don't have a formal smantic of
+a programming lang. The computer doesn't understand, what the prog. is about. We
+only have examples in prosa.
+
+\subsection{Page 14: $\TPL$-Syntax}
+
+\subsection{Page 16}
+We overload the meaning of $\mathcal{P}$, $\mathcal{E}$, $\mathcal{V}$ etc\ldots
+
+\subsection{Page 18}
+Sysntactically correctness is a preconstraint for Semantic correctness.
+
+,,A language understanding is a statistical phenomenon.'' The first sentence on
+this slide became a Meta-Semantics since it was introduced by Chomsky.
+
+\subsection{Page 19}
+We are interested in the red statements in this lecture.
+
+\subsection{Page 21}
+Input-States are an assignment of values to variables.
+
+\subsection{Page 22}
+In $\TPL$ we don't have indeterminism, so we don't have several outputs for one
+input.
+
+\subsection{Page 23 - Program States}
+In our language $\TPL$ a prog.-state is symply a mapping from variables to
+values.
+
+\subsection{Page 24}
+Set of configurations: We have those two types of configurations.\\
+$(\mathcal{P} x \mathcal{S})$ \ldots not final program state.\\
+$\mathcal{S}$\ldots final state
+
+
+
+\subsection{Page 25} there might be no successor configuration. For determinism
+we have at most one!
+
+\subsection{Page 26} for the abort-stmt. no transition is defined.
+
+The stuff with the line is an ,,if\ldots then\ldots else''
+
+Sequential composition: add an arbitr. Programm after $p$.
+
+\subsection{Page 27}
+Square-barckets ($[\ldots]$) is used to denote the semantics of an expression.
+
+Expressions do not change a state! They only have a result.
+
+
+\subsection{Page 29} Note! ,,$[.]$'' is overloaded!\\
+e.g. the evaluation of $[u]$\ldots is a Unary function.\\
+the evaluation of $[b]$\ldots is a Binary function.\\
+
+\subsection{Page 31}
+We have a state $\sigma$ and we want to evaluate the expression $[.]$ with
+the given state.
+
+
+\subsection{Page 31}
+Syntax is inside $[.]$ and semantics is outside $[.]$
+
+\subsection{Page 33 - Example program run. WHILE}
+
+Sequential composition always means we have a subcomputation.
+
+We have now proven, that the result recording to the semantics and inputs is
+correct.
+
+\subsection{Page 34 - Example for ABORT}
+
+
+\subsection{Page 35 - Infinite program run.}
+
+You end up with the same configuration than above, that means we have a infinite
+program.
+
+\subsection{Page 36} the star means we have arbitrary many steps for this
+transition.
+
+
+
+
+
 
 \end{document}
