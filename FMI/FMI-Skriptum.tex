@@ -975,7 +975,7 @@ implication $( a \rightarrow b )$ to $(\neg a \vee b)$
 
 
 
-\section{Deductive Verification of Programs}
+\section{Deductive Verification of Programs 2013-11-13}
 \subparagraph{Lector: }Gernot Salzer
 
 \subsection{Page 5}
@@ -1079,6 +1079,70 @@ program.
 \subsection{Page 36} the star means we have arbitrary many steps for this
 transition.
 
+
+
+\section{Deductive Verification of Programs 2013-11-18}
+
+\subsection{Page 3}
+We alwas have to know what exactly we're verifying.
+
+\subsection{Page 9 - Definition of semantics of a program}
+The transition relation is the definition of the semantics of a program.
+
+\subsection{Page 11 - Difference between $[1]$ and $1$}
+$[1]$ \ldots used in the programming language.\\
+$1$ \ldots the mathematical semantic of $[1]$
+
+\subsection{Page 14}
+Note the difference with sequential composition.\ldots
+
+THis is a high level view.
+
+\subsection{Page 15ff - Proof of if then else}
+Step 3: apply the semantics definition.
+
+
+\subsection{Page 17}
+The natural Semantic is a little bit easier than Structural operational
+semantics (SOS). You don't need so much side computations.
+
+\subsection{Page 22}
+Only if the program terminates we take care of the output-states $S_{out}$
+
+\subparagraph{Partially correctness:} We don't care about termination.
+
+For a determination proof you have to show, that the states will decrease. So
+the lines of codes to be executed must decrease.
+
+Beware: you don't want a operating system to terminate.
+
+
+
+\subsection{Page 26}
+The four different kinds of calculi are similar.
+
+\subsection{Page 27}
+Our quantifiers work only with the states.
+
+\subsection{Page 29}
+F-states: all states, that are a model of thet formula $F$ (\ldots all states
+tha make the formula F true).
+
+Not every set of states can be described by a formula.
+
+\subsection{Page 30}
+,,whenever'' here means ,,if''.
+
+Mathematicians don't have the term ,,terminate'' They say  a function is
+,,defined''
+
+\subsection{Page 31}
+$\{1\}$\ldots this is always true (The semantics of ,,$1''$ is true). (Set of
+all states)
+
+\subsection{Page 36}
+Think of your parents. Mother says ,,no'', father says ,,yes'' $\rightarrow$
+Mother is stronger.
 
 
 
