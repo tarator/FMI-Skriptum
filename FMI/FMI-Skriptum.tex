@@ -18,7 +18,7 @@
 \newcommand{\tb}[1]{\textbf{#1}}
 \newcommand{\entails}[1]{\models{#1}}
 \definecolor{gray}{rgb}{0.8,0.8,0.8}
-
+\pagenumbering{arabic}
 \DeclareGraphicsRule{.tif}{png}{.png}
 {‘convert #1 ‘dirname #1‘/‘basename #1 .tif‘.png}
 %opening
@@ -55,7 +55,8 @@
 	\date{Oct. 2013}
 
 	\maketitle
-	
+	%no page number on first page
+	\thispagestyle{empty}
 	\abstract{This document are personal notes to the provided Course-Material.}
 	\newpage
 	
