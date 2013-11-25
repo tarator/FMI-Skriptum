@@ -1146,7 +1146,56 @@ Think of your parents. Mother says ,,no'', father says ,,yes'' $\rightarrow$
 Mother is stronger.
 
 
+\section{Deductive Verification of Programs 2013-11-20}
+gefehlt
+\begin{itemize}
+	\item Hoare calculus
+	\item Weakest (liberal) precondition
+	\item Strongest postcondition
+\end{itemize}
+
+\section{Deductive Verification of Programs 2013-11-25}
+This is the last lecture of the block 3.
 
 
+\subsection{Page 12}
+,,Shift up- and downwards''
 
+\subsection{Page 16}
+We can ommit the pats we know from the premise.
+
+\subsection{Page 17}
+From line 1 to 2: We can ommit the existential-operator since d is not used in
+the formula.
+
+Block down: Use strongest postcondition to show that left implies the right\ldots
+
+\subsection{Page 18 - Hoare Calculus}
+read bottom-up
+
+\subsection{Page 20}
+
+This is the short variant.
+
+\subsection{Page 22 - Loops}
+The idea is to unwrap the loop $i$-times, so that we don't have a loop anymore.
+
+\subsection{Page 23} the guess must be verified.
+
+\subsection{Page 23}
+Now compute the weakest precondition
+
+
+\subsection{Page 29}
+$c$ must be constant only within the LOOP.
+
+\subsection{Page 32}
+the more premises we have, the (potentially) easier it gets to make the proof.
+
+$wht'' \rightarrow wht'''$\ldots the loop will only iterate once more if $e$
+is true.
+
+
+\subsection{Page 33}
+For most cases it hols, that you find $t$ b looking at the loop-condition.
 \end{document}
