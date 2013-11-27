@@ -1198,4 +1198,85 @@ is true.
 
 \subsection{Page 33}
 For most cases it hols, that you find $t$ b looking at the loop-condition.
+
+
+\section{Block 4 - Errors: Know thy enemy - 2013-11-27}
+Lector: H.Veith
+
+Essentially every program is a single long formula.
+
+\subsection{Limitations of machine Reasoning}
+
+You can write a program which determines if a prog. terminates with the possible
+answers: ,,YES'', ,,NO'', ,,DON'T KNOW''
+
+\subsection{System ANalysis by Model Checking}
+Logical specification is a concrete property like ,,Termination''. Does the
+prog. terminate?
+
+The problem is to get the state description. We are talking of a
+,,\textbf{State Explosion}''. The graphs are getting extraordinary large. (You
+may have (e.g.) $2^{2^{32}}$) nodes in a graph.
+
+
+\section{Block 4 - Temporal Logic Model CHecking}
+
+\subsection{Page 7}
+AG \ldots stands for Always\\
+EF \ldots possible\\
+AF \ldots eventually
+
+\subsection{Page 9 - LTL}
+LTL \ldots linear time logic\\
+XXa \ldots a must hold in the second next state.\\
+XFa \ldots from the next state x must hold in the future
+
+
+It's simple to convert LTL into FO, but quite difficult to do it in the other
+way round.
+
+$G(b \vee Xb)$ \ldots the holes between b is true can be max. the size of one.\\
+$GFc$ \ldots at each state $Fc$ must hold.
+
+
+\subsection{Page 19 - Families of CTL's}
+There are different families of CTL. And variants.
+
+\section{PDF-File with definitions.}
+\subsection{Page 7}
+
+$CTL^*$ is a generalization of $CTL$ and $LTL$
+
+$Fp$ \ldots path formulas (you need a path to tell if the statements holds)\\
+$AXp$ \ldots state formula (you can evaluate this formula with only one state)
+
+Each state-formula is also a path formula.
+
+\subsection{Page 10 - Semantics of a formula}
+
+Read these rules as a programm which tell you what you can do\ldots
+
+\subsection{Page 13}
+in $CTL$ only AX, AG AU, AF and EX, EG, EU, EF are allowed, but not (e.g.) EGF.
+But you can combine those operations. You always have \textbf{state formulas}.
+THis is the big advantage of $CTL$
+
+
+\subsection{Page 14}
+
+In $LTL$ you only have \textbf{Path formulas}. $LTL$ is very useful to find
+counterexamples.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
