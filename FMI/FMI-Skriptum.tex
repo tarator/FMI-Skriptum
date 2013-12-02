@@ -1268,11 +1268,78 @@ In $LTL$ you only have \textbf{Path formulas}. $LTL$ is very useful to find
 counterexamples.
 
  
+\section{Block 4 - Temporal Logic, Model Checking (2.12.2014)}
+
+\subsection{<model checking is fast\ldots}
+$K, s \entails{} \phi $ \ldots $O(|K|*|\phi |)$
+
+\subsection{Symbolic Model checking}
+In the 90's it seemed, that a graph is not the best datastructure to describe a
+problem. The number of nodes exploded (for a normal size C-Program.)
+
+They decided to use \textbf{Binary Decision Diagrams} for Symbolic model
+checking systems.
+
+\section{Simulation and abstraction (02.12.2013)}
+\subsection{Page 2}
+\subparagraph{Preorder:} $A \leq B \wedge B \leq A $ does not imply that $ A =
+B$ (unlike in total order\ldots)
+
+\subsection{Page 3}
+Spoiler \ldots tries to find a counterexample\\
+Duplicator \ldots does the same action than the spoiler and tries to answer.
+
+\subsection{Page 4}
+The spoiler plays on $S$, the duplicator plays on $I$
+
+The color denotes a value of a property of a specific state. Two nodes with the
+same color have the same value, but are not the same state.
 
 
+\subsection{Page 5}
+have the same propositions means ,,have the same color''
+
+\subsection{Page 10}
+
+$a,b,c,d$ are labels and not properties here.
+
+The both graphs are not similiar. But they are bisimilar.
 
 
+\subsection{Page 12}
+$M_2$ has a strategy to simulate $M_1$. The duplicater
+just always has to go to the ,,good'' b. But they are \textbf{NOT} bisimilar.
+The spoiler good go to the Model $M_2$ and goes to the ledt b.
 
+Spoiler goes to the b on the left. In the next round, the spoiler changes the
+sode of the game ($M_1$). Now the duplicator i on $M_2$ and on the ,,bad b''.
+
+The duplicator needs to change sides to win.
+
+Formula: For all reachable b's there exists a d. (This does not hold on
+$M_2$) \ldots $AXEXd$ or $AX(b \rightarrow EXd)$
+
+NB: There must be a ,,E'' in the formula.
+
+\subsection{Page 15}
+These two formulas are important for verifying systems.
+
+We want to verify $M_1$ and construct an $M_2$ which simulates $M_1$. We model
+check a simplified version of $M_1$.
+
+\subsection{Page 16}
+Although you can do more in $N$ it is the smaller one of these graphs.
+
+
+\subsection{Page 20}
+After simplifacation you get a state-base with three states (instead of all
+integers.) This minimizes the number of states (now 3) dramatically.
+
+But you loose a lot of information: $h(7) = h(9) = a_{odd}$ therefore 7 and 19
+are equivalent, because they are mapped to the same abstract states.
+
+\subsection{Page 24}
+The spoiler plays on $M$ and the duplicator plays on $M_r$
 
 
 
