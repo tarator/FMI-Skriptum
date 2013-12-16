@@ -1280,7 +1280,7 @@ problem. The number of nodes exploded (for a normal size C-Program.)
 They decided to use \textbf{Binary Decision Diagrams} for Symbolic model
 checking systems.
 
-\section{Simulation and abstraction (02.12.2013)}
+\section{Block 4 - Simulation and abstraction (02.12.2013)}
 \subsection{Page 2}
 \subparagraph{Preorder:} $A \leq B \wedge B \leq A $ does not imply that $ A =
 B$ (unlike in total order\ldots)
@@ -1341,7 +1341,67 @@ are equivalent, because they are mapped to the same abstract states.
 \subsection{Page 24}
 The spoiler plays on $M$ and the duplicator plays on $M_r$
 
+\subsection{Recap (16.12.2013)}
 
+$M \leq M_h :\\ M_h \entails{} \phi \rightarrow \\ M \entails{} \phi (ACTL*
+\phi)$\\ but if $M_h \not \entails{} \phi \rightarrow ?$ 
+
+so if we abstract to much in $M_h$ and it doesn't entail $\phi$ we can't say
+anything about $M$
+
+The dificult thing is to find a good abstraction function $h$
+
+\subsection{Page 27}
+On the left figure you could for example show if $AG(x \neq 0)$ or $AX(x \neq
+0)$
+
+Tradeoff: If we choose a very simple model we can expect, that we an not show a
+lot of properties of the model. We have to choose a model with which we can show
+what we want to show.
+
+
+\subsection{Page 28 - CEGAR}
+\subparagraph{Idea of CEGAR:} I start with a simple abstraction, I will find a
+counterexample. If it is a spurious counterexample (Counterex. only in the
+abstraction but not in the original model) I use this counterexample to
+refine my abstraction. This is repeated until a find a real counterexample (in
+the abstraction and in the original model).
+
+i don't do the refinements for all properties. Only for properties I want to
+proove.
+
+\subsection{Page 35}
+Colour code on this slide: The green dots are reachable states. (it's not the
+traffic light from before)
+
+\subsection{Page 40 - Predicate Abstraction}
+Brings together the world of abstraction and the world of classical logic.
+
+Use formulas as abstract states instead of nodes in a graph. Instead of abstract
+states we now have formulas.
+
+The formula is everything what's left for a specific abstract state. The formula
+represents everything I still know about that state.
+
+\subsection{Page 42}
+We only have 4 possibilities ($2^2$) with 2 predicates $p_1$ and $p_2$
+
+\subsection{Page 50}
+Question: is this formula satisfiable?
+
+The nice thing is, that we now have instead of 100000's states we only have
+$8x8=64$ states to check. You can also nicely parallelize the task (e.g. on 64
+Processors).
+
+If I do not know if to put an arrow (e.g. model checker runs for multiple hour
+and the question seems to be undecidable) I put one. So: In case of doubt put an
+transition.
+
+
+
+
+
+\section{Block 4 - CBMC (16.12.2013)}
 
 
 
