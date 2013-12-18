@@ -1398,10 +1398,32 @@ and the question seems to be undecidable) I put one. So: In case of doubt put an
 transition.
 
 
+How can you compile an arithmetic expression to an expression over binary bits
+(used by Propositional logic).
+
+
+\subsection{Deciding Bit-Vector Logic with sat}
+$a_i$ denotes the $i$-th bit of the variable $i$
 
 
 
-\section{Block 4 - CBMC (16.12.2013)}
+\section{SAT based Model Checking (18.12.2013)}
+
+\subparagraph{CBMC} (,,C Bounded Model Checking'') is a nice tool to do SAT
+based Model Checking.
+
+\subparagraph{Idea:} Unwind a whole program instead of a single line of code
+into an equation.
+
+\subsection{Loop Unwinding}
+This is the crucial thing: What do we do with the loop?
+
+THis is the reason why we call it bounded model Checking: We only unwind a loop
+until a specific bound ($assert(!cond)$)
+
+\subsection{Transform Loop-free progs. into Equations}
+in loop free programs you can use fresh variables for each variable occurence
+and then you get a formula which can be handled by a SAT-solver
 
 
 
